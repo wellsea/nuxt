@@ -17,3 +17,4 @@ dist
 *.ntvs*
 *.njsproj
 *.sln
+*.xml
