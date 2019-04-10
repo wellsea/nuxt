@@ -23,6 +23,15 @@
 </template>
 
 <script>
+asyncData({app, query}) {
+  console.log(query)
+  // 根据不用的标签获取不同的数据，最后返回话题列表。
+  return app.$axios.$get(`topics?tab=${query.tab || ''}`).then(res => {
+    // console.log(res)
+    // console.log(JSON.parse(res))
+    return {list: res.data}
+  })
+};
 import AppLogo from '~/components/AppLogo.vue'
 
 export default {
